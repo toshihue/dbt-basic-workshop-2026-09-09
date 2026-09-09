@@ -14,4 +14,8 @@ sources:
           - name: id
             data_tests:
               - unique
+<<<<<<< HEAD
               - not_null
+=======
+              - not_null
+>>>>>>> 53a8a4684d1a8eedf288d32244b9d744eeb74b58

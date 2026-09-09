@@ -1,5 +1,6 @@
 version: 2
 
+<<<<<<< HEAD
 # models:
 #   - name: customers
 #     columns:
@@ -15,6 +16,8 @@ version: 2
 #           - unique
 #           - not_null
 
+=======
+>>>>>>> 53a8a4684d1a8eedf288d32244b9d744eeb74b58
 models:
   - name: customers
     description: 1レコードが1件の顧客を示す
@@ -39,6 +42,7 @@ models:
       - name: number_of_orders
         description: 顧客の累計注文件数。注文がない場合は0
 
+<<<<<<< HEAD
 
 
   - name: stg_orders
@@ -63,6 +67,18 @@ models:
 
 unit_tests:
   - name: test_customers_aggregates_orders_for_existing_customer
+=======
+unit_tests:
+
+  - name: test_customers_aggregates_orders_for_existing_customer
+
+    description: >
+
+      既存顧客の注文を集計し、
+
+      初回注文日・最新注文日・注文回数が正しく算出されることを確認する。
+
+>>>>>>> 53a8a4684d1a8eedf288d32244b9d744eeb74b58
     model: customers
     given:
       - input: ref('stg_customers')
@@ -82,7 +98,10 @@ unit_tests:
             most_recent_order_date: "2023-06-15",
             number_of_orders: 2
           }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 53a8a4684d1a8eedf288d32244b9d744eeb74b58
   - name: test_customers_defaults_to_zero_orders_when_no_orders_exist
     model: customers
     given:
@@ -100,6 +119,10 @@ unit_tests:
             first_order_date: null,
             most_recent_order_date: null,
             number_of_orders: 0
+<<<<<<< HEAD
           }
 
 
+=======
+          }
+>>>>>>> 53a8a4684d1a8eedf288d32244b9d744eeb74b58
