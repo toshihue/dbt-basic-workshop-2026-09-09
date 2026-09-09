@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    description: "Jaffle Shop アプリケーションから取り込まれた raw データ。"
+    database: raw
+    schema: jaffle_shop
+    tables:
+      - name: customers
+        description: "顧客の基本情報。1顧客につき1行。"
+        columns:
+          - name: id
+            description: "顧客を一意に識別する主キー。"
+            data_tests:
+              - unique
+              - not_null
+          - name: first_name
+            description: "顧客の名。"
+          - name: last_name
+            description: "顧客の姓。"
+
+      - name: orders
+        description: "顧客が行った注文。1注文につき1行。"
+        columns:
+          - name: id
+            description: "注文を一意に識別する主キー。"
+            data_tests:
+              - unique
+              - not_null
+          - name: user_id
+            description: "注文した顧客のID。customers.id に対応する。"
+          - name: order_date
+            description: "注文日。"
+          - name: status
+            description: "注文の現在ステータス。"
