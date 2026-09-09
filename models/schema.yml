@@ -92,3 +92,11 @@ unit_tests:
             most_recent_order_date: null,
             number_of_orders: 0
           }
+
+
+
+  - name: test_customers_aggregates_orders_for_existing_customer
+    description: >
+      既存顧客の注文を集計し、
+      初回注文日・最新注文日・注文回数が正しく算出されることを確認する。
+    model: customers
